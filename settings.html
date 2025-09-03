@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>الإعدادات - نظام مراقبة التراخيص</title>
+  <link rel="icon" type="image/png" href="../وحدة logoالتخطيط والتدريب/logo.png" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard-page">
+  <div class="dashboard-layout">
+    <!-- ================== Sidebar (القائمة الجانبية) ================== -->
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="../وحدة logoالتخطيط والتدريب/logo.png" alt="شعار مصلحة الطيران" onerror="this.style.display='none'" />
+        <div class="title">
+          <h1>مصلحة الطيران المدني</h1>
+          <div class="sub-titles">
+            <span>إدارة الملاحة الجوية</span>
+            <span>وحدة التدريب</span>
+          </div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="dashboard.html"><i class="fas fa-home fa-fw"></i><span>الرئيسية</span></a></li>
+          <li><a href="reports.html"><i class="fas fa-chart-bar fa-fw"></i><span>التقارير</span></a></li>
+          <li><a href="settings.html"><i class="fas fa-cog fa-fw"></i><span>الإعدادات</span></a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt fa-fw"></i><span>تسجيل الخروج</span></a>
+      </div>
+    </aside>
+
+    <!-- ================== Main Content (المحتوى الرئيسي) ================== -->
+    <main class="main-content">
+      <header class="main-header">
+        <h2>إعدادات النظام</h2>
+      </header>
+
+      <section class="content-area">
+        <div class="settings-grid">
+            <div class="settings-card">
+                <h3><i class="fas fa-key"></i> الأمان</h3>
+                <p>تغيير كلمة المرور الخاصة بحسابك.</p>
+                <button id="changePasswordBtn" class="btn btn-primary">تغيير كلمة المرور</button>
+            </div>
+            <div class="settings-card">
+                <h3><i class="fas fa-users-cog"></i> إدارة المستخدمين</h3>
+                <p>إضافة أو إزالة المستخدمين وتحديد صلاحياتهم.</p>
+                <div class="settings-actions">
+                    <button id="addUserBtn" class="btn btn-accent"><i class="fas fa-user-plus"></i> إضافة مستخدم</button>
+                    <button id="removeUserBtn" class="btn btn-danger"><i class="fas fa-user-minus"></i> إزالة مستخدم</button>
+                </div>
+            </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Settings Modal -->
+  <div id="settingsModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle"></h2>
+        <button id="closeModalBtn" class="close-btn">&times;</button>
+      </div>
+      <div id="modalBody" class="modal-body"></div>
+      <div class="modal-footer">
+        <button id="saveSettingsBtn" class="btn btn-primary">حفظ التغييرات</button>
+        <button id="cancelBtn" class="btn btn-secondary">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

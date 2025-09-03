@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>التقارير - نظام مراقبة التراخيص</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard-page">
+  <div class="dashboard-layout">
+    <!-- ================== Sidebar (القائمة الجانبية) ================== -->
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="../Images/logo.png" alt="شعار مصلحة الطيران" onerror="this.style.display='none'" />
+        <div class="title">
+          <h1>مصلحة الطيران المدني</h1>
+          <div class="sub-titles">
+            <span>إدارة الملاحة الجوية</span>
+            <span>وحدة التدريب</span>
+          </div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="dashboard.html"><i class="fas fa-home fa-fw"></i><span>الرئيسية</span></a></li>
+          <li><a href="reports.html"><i class="fas fa-chart-bar fa-fw"></i><span>التقارير</span></a></li>
+          <li><a href="settings.html"><i class="fas fa-cog fa-fw"></i><span>الإعدادات</span></a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt fa-fw"></i><span>تسجيل الخروج</span></a>
+      </div>
+    </aside>
+
+    <!-- ================== Main Content (المحتوى الرئيسي) ================== -->
+    <main class="main-content">
+      <header class="main-header">
+        <div class="header-actions">
+          <button id="expiredBtn" class="btn btn-icon btn-danger"><i class="fas fa-times-circle"></i> عرض التراخيص المنتهية</button>
+          <button id="expiringSoonBtn" class="btn btn-icon btn-warning"><i class="fas fa-exclamation-triangle"></i> عرض التي قاربت على الانتهاء</button>
+          <button id="activeBtn" class="btn btn-icon btn-primary"><i class="fas fa-check-circle"></i> عرض التراخيص السارية</button>
+        </div>
+      </header>
+
+      <section class="content-area">
+        <!-- سيتم عرض جدول التقرير هنا -->
+        <div id="reportPlaceholder" class="placeholder">
+          <h2>منطقة عرض التقارير</h2>
+          <p>الرجاء اختيار نوع التقرير لعرض البيانات.</p>
+        </div>
+        <div id="reportTableContainer" style="display: none;">
+          <table id="reportTable" class="display" style="width:100%"></table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> <!-- Required for Excel export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script> <!-- Required for PDF export -->
+  <script src="vfs_fonts.js"></script> <!-- ملف الخطوط المحلي الذي يدعم العربية -->
+  <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
